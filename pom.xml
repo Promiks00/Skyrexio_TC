@@ -17,6 +17,7 @@
         <webdrivermanager.version>6.3.3</webdrivermanager.version>
         <allure-testng.version>2.31.0</allure-testng.version>
         <aspectj.version>1.9.25</aspectj.version>
+        <selenide.version>7.12.3</selenide.version>
     </properties>
 
     <dependencies>
@@ -46,6 +47,17 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.11.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
         </dependency>
     </dependencies>
 
