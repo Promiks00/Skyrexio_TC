@@ -1,20 +1,29 @@
 package tests;
 
 import org.testng.annotations.Test;
+import pages.LoginPage;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class LoginTest {
+public class LoginTest extends BaseTest {
 
     @Test
     void validLogin() {
-        open("https://test.skyrexio.com/login");
-        $("[placeholder='Email']").setValue("wheel64959@mriscan.live");
-        $("[type='password']").setValue("JR7-iWB-j5q-SnK").pressEnter();
-        $x("//div[normalize-space()='Главная']").shouldHave(text("Главная"));
+        String email = "wheel64959@mriscan.live";
+        String password = "JR7-iWB-j5q-SnK";
 
-
+        new LoginPage()
+                .openLoginPage()
+                .setEmail(email)
+                .setPassword(password)
+                .pressEnterOnPassword();
+        $x("//h2[text()='Статистика']")
+                .shouldHave(text("Статистика"));
     }
-    void invalidLogin(String username, String password) {}
+
+    void invalidLogin() {
+    }
+
+
 }
