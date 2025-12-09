@@ -16,19 +16,18 @@ public class LoginPage {
     private final SelenideElement passwordInput = $(PASSWORD_SELECTOR);
 
 
-
-    public LoginPage openLoginPage(){
+    public LoginPage openLoginPage() {
         open("/login");
         title.shouldHave(text(TITLE_TEXT));
         return this;
     }
 
-    public LoginPage setEmail(String email){
+    public LoginPage setEmail(String email) {
         emailInput.setValue(email);
         return this;
     }
 
-    public LoginPage setPassword(String password){
+    public LoginPage setPassword(String password) {
         passwordInput.setValue(password);
         return this;
     }

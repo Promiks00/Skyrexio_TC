@@ -2,9 +2,7 @@ package tests;
 
 import org.testng.annotations.Test;
 import pages.LoginPage;
-
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
+import pages.MainPage;
 
 public class LoginTest extends BaseTest {
 
@@ -18,8 +16,9 @@ public class LoginTest extends BaseTest {
                 .setEmail(email)
                 .setPassword(password)
                 .pressEnterOnPassword();
-        $x("//h2[text()='Статистика']")
-                .shouldHave(text("Статистика"));
+
+        new MainPage()
+                .shouldSeeStatistics();
     }
 
     void invalidLogin() {
