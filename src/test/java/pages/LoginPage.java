@@ -7,13 +7,10 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class LoginPage {
     private static final String TITLE_TEXT = "Войдите в свой аккаунт";
-    private static final String TITLE_XPATH = "//p[contains(text(), '" + TITLE_TEXT + "')]";
-    private static final String EMAIL_SELECTOR = "[placeholder='Email']";
-    private static final String PASSWORD_SELECTOR = "[type='password']";
 
-    private final SelenideElement title = $x(TITLE_XPATH);
-    private final SelenideElement emailInput = $(EMAIL_SELECTOR);
-    private final SelenideElement passwordInput = $(PASSWORD_SELECTOR);
+    private final SelenideElement title = $x("//p[contains(text(), '" + TITLE_TEXT + "')]");
+    private final SelenideElement emailInput = $("[placeholder='Email']");
+    private final SelenideElement passwordInput = $("[type='password']");
 
 
     public LoginPage openLoginPage() {
