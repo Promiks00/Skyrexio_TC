@@ -3,15 +3,15 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class LoginPage {
     private static final String TITLE_TEXT = "Войдите в свой аккаунт";
 
-    private final SelenideElement title = $x("//p[contains(text(), '" + TITLE_TEXT + "')]");
+    private final SelenideElement title = $(byText(TITLE_TEXT));;
     private final SelenideElement emailInput = $("[placeholder='Email']");
     private final SelenideElement passwordInput = $("[type='password']");
-
 
     public LoginPage openLoginPage() {
         open("/login");

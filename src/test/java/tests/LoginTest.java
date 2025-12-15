@@ -20,9 +20,4 @@ public class LoginTest extends BaseTest {
         new MainPage()
                 .shouldSeeStatistics();
     }
-
-    void invalidLogin() {
-    }
-
-
 }
